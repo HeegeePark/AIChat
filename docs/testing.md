@@ -32,7 +32,7 @@ xcodebuild test \
 
 ## 린트
 
-CI(`.github/workflows/lint.yml`)와 동일하게 로컬에서 돌릴 때만:
+CI(`.github/workflows/lint.yml`)와 동일하게 로컬에서 돌릴 때만. CI는 SwiftLint·SwiftFormat 버전을 `lint.yml`의 `env`에 고정해 두므로, 로컬도 같은 버전을 쓴다 (`swiftlint version`, `swiftformat --version`으로 확인):
 
 ```bash
 brew install swiftlint swiftformat   # 최초 1회
