@@ -1,0 +1,7 @@
+--swiftversion 6.3
+--indent 4
+--indentcase false
+--trimwhitespace always
+--semicolons never
+--commas always
+--linebreaks lf

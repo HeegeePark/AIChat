@@ -1,0 +1,49 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Write",
+      "Edit",
+      "mcp__XcodeBuildMCP__*",
+      "Bash(git *)",
+      "Bash(swift *)",
+      "Bash(swiftformat *)",
+      "Bash(xcbeautify *)",
+      "Bash(xcrun simctl *)"
+    ],
+    "deny": [
+      "Read(.env*)",
+      "Write(.env*)",
+      "Bash(rm -rf *)",
+      "Bash(git push *)"
+    ]
+  },
+  "env": {
+    "DEFAULT_SIMULATOR": "iPhone 16",
+    "IOS_DEPLOYMENT_TARGET": "17.0"
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/post-swift-edit.sh"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/file-protection.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

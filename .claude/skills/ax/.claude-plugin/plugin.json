@@ -1,0 +1,13 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "ax",
+  "version": "0.1.0",
+  "description": "iOS/Swift 개발 파이프라인: spec → plan → 실행 → 리뷰 → 테스트 → 문서 → 회고",
+  "author": {
+    "name": "HeegeePark",
+    "email": "phg980513@naver.com"
+  },
+  "skills": [
+    "./"
+  ]
+}
