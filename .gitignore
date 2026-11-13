@@ -1,0 +1,33 @@
+# Xcode
+build/
+DerivedData/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+xcuserdata/
+*.xcscmblueprint
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscheme
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# macOS
+.DS_Store
+
+# XcodeBuildMCP incremental build (xcodemake)
+AIChat/Makefile
+AIChat/xcodemake_*.log
+
+# Claude Code (settings.json/hooks/.mcp.json은 커밋 대상, local만 제외)
+.claude/settings.local.json
+
+# Session scratch (screenshots, local baselines)
+.scratch/
+
+# superpowers 플러그인 기본 산출 경로 (레포에 포함하지 않음)
+docs/superpowers/
