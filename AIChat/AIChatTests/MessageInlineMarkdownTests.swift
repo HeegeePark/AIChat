@@ -24,9 +24,9 @@ struct MessageInlineMarkdownTests {
     ) -> Bool {
         let full = attributed.string as NSString
         let range = full.range(of: substring)
-        guard range.location != NSNotFound else { return false }
-        guard let runFont = attributed.attribute(.font, at: range.location, effectiveRange: nil)
-            as? UIFont
+        guard range.location != NSNotFound,
+              let runFont = attributed.attribute(.font, at: range.location, effectiveRange: nil)
+              as? UIFont
         else { return false }
         return runFont.fontDescriptor.symbolicTraits.contains(trait)
     }
@@ -35,8 +35,7 @@ struct MessageInlineMarkdownTests {
     private func hasObliqueness(_ attributed: NSAttributedString, substring: String) -> Bool {
         let full = attributed.string as NSString
         let range = full.range(of: substring)
-        guard range.location != NSNotFound else { return false }
-        guard let value = attributed.attribute(
+        guard range.location != NSNotFound, let value = attributed.attribute(
             .obliqueness,
             at: range.location,
             effectiveRange: nil,
@@ -48,8 +47,7 @@ struct MessageInlineMarkdownTests {
     private func hasStrikethrough(_ attributed: NSAttributedString, substring: String) -> Bool {
         let full = attributed.string as NSString
         let range = full.range(of: substring)
-        guard range.location != NSNotFound else { return false }
-        guard let style = attributed.attribute(
+        guard range.location != NSNotFound, let style = attributed.attribute(
             .strikethroughStyle,
             at: range.location,
             effectiveRange: nil,
